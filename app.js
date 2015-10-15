@@ -35,7 +35,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //index
 app.get('/', function(req, res) {
-  res.render('index', {title: '' , env: process.env.NODE_ENV});
+  res.render('index', {
+    'title': '' ,
+    'env': process.env.NODE_ENV,
+    'ga-account': process.env.GA_ACCOUNT || null
+  });
 });
 
 // catch 404 and forward to error handler
