@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	img(src='/jeff-oops.jpg')
+	h1
+		| Oops, 
+		= message
+	h3= error.status
+	pre #{error.stack}

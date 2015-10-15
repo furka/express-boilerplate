@@ -1,0 +1,17 @@
+extends layout
+
+block title
+
+block content
+
+    if env === 'development'
+      link(rel='stylesheet', href='stylesheets/main.less', type='text/less')
+      script(src='node_modules/less/dist/less.min.js')
+      script(src='node_modules/requirejs/require.js')
+      script(src='require-config.js')
+      script.
+        require(['main'])
+    else
+      link(rel='stylesheet', href='stylesheets/main.css')
+      script(src='javascripts/app.min.js' async)
+
