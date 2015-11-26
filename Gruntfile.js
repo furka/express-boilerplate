@@ -72,24 +72,14 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      scripts: {
+      src: {
         files: [
-          'src/internal/**/*',
-          'src/templates/**/*',
-          'src/javascripts/main.js'
+          'src/**/*'
         ],
         tasks: ['requirejs', 'uglify'],
         options: {
           interrupt: true,
-        },
-      },
-
-      less: {
-        files: ['src/stylesheets/**/*'],
-        task: ['less'],
-        options: {
-          interrupt: true,
-        },
+        }
       }
     }
   });
