@@ -11,9 +11,10 @@ module.exports = function(grunt) {
           mainConfigFile: 'src/require-config.js',
           optimize: 'none',
 
-          deps: ['main'],
-          name: 'app',
-          insertRequire: ['main'],
+
+          name: '../../node_modules/almond/almond',
+          include: ['main'],
+          insertRequire: [ 'main'],
           out: 'public/javascripts/app.js',
           create: true,
           wrap: true
@@ -65,12 +66,6 @@ module.exports = function(grunt) {
       }
     },
 
-    version: {
-      defaults: {
-        src: ['package.json']
-      }
-    },
-
     watch: {
       src: {
         files: [
@@ -90,7 +85,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-version');
 
 
   // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
