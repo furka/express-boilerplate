@@ -1,9 +1,7 @@
 define([
-  'underscore',
-  'jquery'
 ], function (
 ) {
   'use strict';
 
-  
+  console.log('hello world')
 });
