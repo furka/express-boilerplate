@@ -1,6 +1,6 @@
 ## Installation
 
-Install all `node_modules` first.
+Clone repository, then install all `node_modules` first.
 
 ```
 $ npm install
