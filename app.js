@@ -30,8 +30,10 @@ if (process.env.NODE_ENV === 'development') {
     console.log('environment is production');
 }
 
-app.use(express.static(path.join(__dirname, 'public')));
+//api
+app.use('/api', require('./routes/api'));
 
+app.use(express.static(path.join(__dirname, 'public')));
 
 //index
 app.get('/', function(req, res) {
