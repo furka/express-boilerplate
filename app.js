@@ -20,14 +20,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(compress());
 
+console.log('environment set to ' + process.env.NODE_ENV);
 
 //allow using of src folder when in dev mode
 if (process.env.NODE_ENV === 'development') {
-    console.log('environment is development');
     app.use(express.static(path.join(__dirname, 'src')));
     app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
-} else {
-    console.log('environment is production');
 }
 
 //api
